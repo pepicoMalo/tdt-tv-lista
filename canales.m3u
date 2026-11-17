@@ -6,14 +6,46 @@
 # Atresplayer y Mediaset solo dan el directo si se aceptan las cookies: su receta las acepta (decision del usuario, 2026-11-17).
 #EXTINF:-1 tvg-id="antena3" group-title="Nacional",Antena 3
 https://www.atresplayer.com/directos/antena3/
+#EXTINF:-1 tvg-id="lasexta" group-title="Nacional",laSexta
+https://www.atresplayer.com/directos/lasexta/
+#EXTINF:-1 tvg-id="neox" group-title="Nacional",Neox
+https://www.atresplayer.com/directos/neox/
+#EXTINF:-1 tvg-id="nova" group-title="Nacional",Nova
+https://www.atresplayer.com/directos/nova/
+#EXTINF:-1 tvg-id="mega" group-title="Nacional",Mega
+https://www.atresplayer.com/directos/mega/
+#EXTINF:-1 tvg-id="atreseries" group-title="Nacional",Atreseries
+https://www.atresplayer.com/directos/atreseries/
 #EXTINF:-1 tvg-id="cuatro" group-title="Nacional",Cuatro
 https://www.mediasetinfinity.es/directo/cuatro/
 #EXTINF:-1 tvg-id="telecinco" group-title="Nacional",Telecinco
 https://www.mediasetinfinity.es/directo/telecinco/
-#EXTINF:-1 tvg-id="lasexta" group-title="Nacional",laSexta
-https://www.atresplayer.com/directos/lasexta/
+#EXTINF:-1 tvg-id="fdf" group-title="Nacional",Factoría de Ficción
+https://www.mediasetinfinity.es/directo/fdf/
+#EXTINF:-1 tvg-id="boing" group-title="Nacional",Boing
+https://www.mediasetinfinity.es/directo/boing/
+#EXTINF:-1 tvg-id="divinity" group-title="Nacional",Divinity
+https://www.mediasetinfinity.es/directo/divinity/
+#EXTINF:-1 tvg-id="energy" group-title="Nacional",Energy
+https://www.mediasetinfinity.es/directo/energy/
+#EXTINF:-1 tvg-id="bemad" group-title="Nacional",Be Mad
+https://www.mediasetinfinity.es/directo/bemad/
 #EXTINF:-1 tvg-id="rtve-24h" group-title="Nacional",24 Horas
 https://www.rtve.es/play/videos/directo/canales-lineales/24h/
+#EXTINF:-1 tvg-id="dmax" group-title="Nacional",DMAX
+https://www.max.com/es/es/ondemand/dmax
+#EXTINF:-1 tvg-id="dkiss" group-title="Nacional",DKISS
+https://www.dkiss.es/en-directo
+#EXTINF:-1 tvg-id="ten" group-title="Nacional",TEN
+https://tentv.es/en-directo/
+#EXTINF:-1 tvg-id="paramount" group-title="Nacional",Paramount Network
+https://www.paramountnetwork.es/en-directo
+#EXTINF:-1 tvg-id="trece" group-title="Nacional",TRECE
+https://trecetv.es/directo
+#EXTINF:-1 tvg-id="golplay" group-title="Nacional",Gol Play
+https://golplay.com/en-directo
+#EXTINF:-1 tvg-id="realmadridtv" group-title="Nacional",Real Madrid TV
+https://www.realmadrid.com/es-es/rmplay/tv
 
 # --- Autonomicos ---
 #EXTINF:-1 tvg-id="tv3" group-title="Autonómico" x-subs="1",TV3
