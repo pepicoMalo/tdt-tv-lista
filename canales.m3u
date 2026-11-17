@@ -3,15 +3,15 @@
 # Atributos propios: x-subs="1" subtitulos, x-login="1" pide cuenta, x-disabled="1" desactivado, x-recipe="clave".
 
 # --- Corporación RTVE ---
-#EXTINF:-1 tvg-id="la1" group-title="Nacional" x-login="1",La 1
+#EXTINF:-1 tvg-id="la1" group-title="Nacional",La 1
 https://www.rtve.es/play/videos/directo/canales-lineales/la-1/
-#EXTINF:-1 tvg-id="la2" group-title="Nacional" x-login="1",La 2
+#EXTINF:-1 tvg-id="la2" group-title="Nacional",La 2
 https://www.rtve.es/play/videos/directo/canales-lineales/la-2/
 #EXTINF:-1 tvg-id="rtve-24h" group-title="Nacional",24 Horas
 https://www.rtve.es/play/videos/directo/canales-lineales/24h/
-#EXTINF:-1 tvg-id="clan" group-title="Nacional" x-login="1",Clan
+#EXTINF:-1 tvg-id="clan" group-title="Nacional",Clan
 https://www.rtve.es/play/clan/directo/
-#EXTINF:-1 tvg-id="teledeporte" group-title="Nacional" x-login="1",Teledeporte
+#EXTINF:-1 tvg-id="teledeporte" group-title="Nacional",Teledeporte
 https://www.rtve.es/play/videos/directo/tdp/
 
 # --- Autonómicos de Cataluña ---
@@ -94,21 +94,4 @@ https://www.telemadrid.es/emision-en-directo/
 https://www.telemadrid.es/emision-en-directo-laotra/
 #EXTINF:-1 tvg-id="apunt" group-title="Autonómico",À Punt
 https://www.apuntmedia.es/directe/directe-tv_136_1392524.html
-#EXTINF:-1 tvg-id="tpa" group-title="Autonómico",TPA
-https://www.rtpa.es/tpa-television
-#EXTINF:-1 tvg-id="la7cyl" group-title="Autonómico",La 7 Castilla y León
-https://www.cyltvplay.es/player/d3badef6-d229-4a27-9609-03df3d17ca3/la7/la7
-#EXTINF:-1 tvg-id="canalextremadura" group-title="Autonómico",Canal Extremadura
-https://www.canalextremadura.app/videos/182630-television-en-directo
-#EXTINF:-1 tvg-id="aragontv" group-title="Autonómico" x-login="1",Aragón TV
-https://www.aragonplay.es/watch/live/69934178aea15ae34fa39ad0
-#EXTINF:-1 tvg-id="rtvc" group-title="Autonómico" x-disabled="1",TV Canaria
-https://rtvc.es/en-directo/
-#EXTINF:-1 tvg-id="ib3" group-title="Autonómico" x-disabled="1",IB3
-https://ib3.org/directe
-#EXTINF:-1 tvg-id="cmm" group-title="Autonómico" x-disabled="1",CMM TV
-https://cmmplay.es/live/469/Television
-#EXTINF:-1 tvg-id="7rm" group-title="Autonómico" x-disabled="1",7RM
-https://www.la7tv.es/a-la-carta/7tv-en-directo/20220810150726000939.html
-#EXTINF:-1 tvg-id="navarratv" group-title="Autonómico" x-disabled="1",Navarra TV
-https://www.navarratelevision.es/Directo
+#EXTINF:-1 tvg-id
