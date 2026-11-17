@@ -1,0 +1,76 @@
+#EXTM3U
+# Lista v1 (verificada el 2026-11-17 en navegador de escritorio, desde España). Orden = orden de zapping.
+# Atributos propios: x-subs="1" subtitulos, x-login="1" pide cuenta, x-disabled="1" desactivado, x-recipe="clave".
+
+# --- Nacional ---
+# Atresplayer y Mediaset solo dan el directo si se aceptan las cookies: su receta las acepta (decision del usuario, 2026-11-17).
+#EXTINF:-1 tvg-id="antena3" group-title="Nacional",Antena 3
+https://www.atresplayer.com/directos/antena3/
+#EXTINF:-1 tvg-id="cuatro" group-title="Nacional",Cuatro
+https://www.mediasetinfinity.es/directo/cuatro/
+#EXTINF:-1 tvg-id="telecinco" group-title="Nacional",Telecinco
+https://www.mediasetinfinity.es/directo/telecinco/
+#EXTINF:-1 tvg-id="lasexta" group-title="Nacional",laSexta
+https://www.atresplayer.com/directos/lasexta/
+#EXTINF:-1 tvg-id="rtve-24h" group-title="Nacional",24 Horas
+https://www.rtve.es/play/videos/directo/canales-lineales/24h/
+
+# --- Autonomicos ---
+#EXTINF:-1 tvg-id="tv3" group-title="Autonómico" x-subs="1",TV3
+https://www.3cat.cat/3cat/directes/tv3/
+#EXTINF:-1 tvg-id="3catinfo" group-title="Autonómico",3Cat Info (324)
+https://www.3cat.cat/3cat/directes/3catinfo-tv/
+#EXTINF:-1 tvg-id="sx3" group-title="Autonómico",SX3
+https://www.3cat.cat/3cat/directes/sx3/
+#EXTINF:-1 tvg-id="33" group-title="Autonómico",Canal 33
+https://www.3cat.cat/3cat/directes/33/
+#EXTINF:-1 tvg-id="esport3" group-title="Autonómico",Esport3
+https://www.3cat.cat/3cat/directes/esport3/
+#EXTINF:-1 tvg-id="etb1" group-title="Autonómico",ETB1
+https://etbon.eus/ch/etb-1on
+#EXTINF:-1 tvg-id="etb2" group-title="Autonómico",ETB2
+https://etbon.eus/ch/etb-2on
+#EXTINF:-1 tvg-id="tvg" group-title="Autonómico",TVG
+https://www.agalega.gal/videos/76475-tvg
+#EXTINF:-1 tvg-id="tvg2" group-title="Autonómico",TVG2
+https://www.agalega.gal/videos/77550-tv-g2
+#EXTINF:-1 tvg-id="canalsur" group-title="Autonómico",Canal Sur
+https://www.canalsurmas.es/videos/131772-canal-sur-andalucia
+#EXTINF:-1 tvg-id="telemadrid" group-title="Autonómico",Telemadrid
+https://www.telemadrid.es/emision-en-directo/
+#EXTINF:-1 tvg-id="laotra" group-title="Autonómico",La Otra
+https://www.telemadrid.es/emision-en-directo-laotra/
+#EXTINF:-1 tvg-id="apunt" group-title="Autonómico",À Punt
+https://www.apuntmedia.es/directe/directe-tv_136_1392524.html
+#EXTINF:-1 tvg-id="tpa" group-title="Autonómico",TPA
+https://www.rtpa.es/tpa-television
+#EXTINF:-1 tvg-id="la7cyl" group-title="Autonómico",La 7 Castilla y León
+https://www.cyltvplay.es/player/d3badef6-d229-4a27-9609-03df3d17ca3/la7/la7
+#EXTINF:-1 tvg-id="canalextremadura" group-title="Autonómico",Canal Extremadura
+https://www.canalextremadura.app/videos/182630-television-en-directo
+
+# ============ Fuera de la v1 (la app los ignora; ver NOTAS.md) ============
+
+# Piden cuenta gratuita
+#EXTINF:-1 tvg-id="la1" group-title="Nacional" x-login="1",La 1
+https://www.rtve.es/play/videos/directo/canales-lineales/la-1/
+#EXTINF:-1 tvg-id="la2" group-title="Nacional" x-login="1",La 2
+https://www.rtve.es/play/videos/directo/canales-lineales/la-2/
+#EXTINF:-1 tvg-id="teledeporte" group-title="Nacional" x-login="1",Teledeporte
+https://www.rtve.es/play/videos/directo/tdp/
+#EXTINF:-1 tvg-id="clan" group-title="Nacional" x-login="1",Clan
+https://www.rtve.es/play/clan/directo/
+#EXTINF:-1 tvg-id="aragontv" group-title="Autonómico" x-login="1",Aragón TV
+https://www.aragonplay.es/watch/live/69934178aea15ae34fa39ad0
+
+# Reproductor en iframe de otro dominio o sin autoplay: por resolver
+#EXTINF:-1 tvg-id="rtvc" group-title="Autonómico" x-disabled="1",TV Canaria
+https://rtvc.es/en-directo/
+#EXTINF:-1 tvg-id="ib3" group-title="Autonómico" x-disabled="1",IB3
+https://ib3.org/directe
+#EXTINF:-1 tvg-id="cmm" group-title="Autonómico" x-disabled="1",CMM TV
+https://cmmplay.es/live/469/Television
+#EXTINF:-1 tvg-id="7rm" group-title="Autonómico" x-disabled="1",7RM
+https://www.la7tv.es/a-la-carta/7tv-en-directo/20220810150726000939.html
+#EXTINF:-1 tvg-id="navarratv" group-title="Autonómico" x-disabled="1",Navarra TV
+https://www.navarratelevision.es/Directo

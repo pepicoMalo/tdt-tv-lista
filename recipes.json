@@ -1,0 +1,30 @@
+{
+  "default": {
+    "fullVideo": true,
+    "desktop": true,
+    "css": "",
+    "js": "var b=document.querySelector('#didomi-notice-disagree-button,#onetrust-reject-all-handler,#CybotCookiebotDialogBodyButtonDecline,.fc-cta-do-not-consent,#disagree-btn,#c-s-bn');if(b)b.click();"
+  },
+  "recipes": {
+    "3cat.cat": {
+      "player": ".bitmovinplayer-container",
+      "css": ".tdt-main video{position:absolute!important;left:0!important;top:0!important;width:100%!important;height:100%!important;object-fit:contain!important}.tdt-main .bmpui-ui-uicontainer{width:100%!important;height:100%!important}",
+      "ccJs": "var s=document.querySelector('select.bmpui-ui-subtitleselectbox');if(!s||s.options.length<2)return 'none';var on=s.selectedIndex>0;s.selectedIndex=on?0:1;s.dispatchEvent(new Event('change',{bubbles:true}));return on?'off':'on';"
+    },
+    "agalega.gal": {
+      "css": "iframe[id^=\"sp_message_iframe\"],div[id^=\"sp_message_container\"]{display:none!important}"
+    },
+    "apuntmedia.es": {
+      "play": "button.vjs-big-play-button"
+    },
+    "atresplayer.com": {
+      "inheritJs": false,
+      "js": "var a=document.querySelector('#didomi-notice-agree-button');if(a)a.click();",
+      "play": "button[aria-label=\"Directo\"]"
+    },
+    "mediasetinfinity.es": {
+      "inheritJs": false,
+      "js": "var a=document.querySelector('#didomi-notice-agree-button');if(a){a.click();return;}var bs=document.querySelectorAll('button');for(var i=0;i<bs.length;i++){if(/aceptar y navegar/i.test(bs[i].textContent)){bs[i].click();break;}}"
+    }
+  }
+}
