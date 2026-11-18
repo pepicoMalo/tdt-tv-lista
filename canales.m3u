@@ -1,6 +1,7 @@
 #EXTM3U
 # Lista v1 (verificada el 2026-11-17 en navegador de escritorio, desde España). Orden = orden de zapping.
 # Atributos propios: x-subs="1" subtitulos, x-login="1" pide cuenta, x-disabled="1" desactivado, x-recipe="clave".
+# x-login: la app 0.2.0 o posterior lo muestra con el aviso «pide cuenta»; la 0.1.0 lo descarta. Iniciar sesion: OK en el mando (modo cursor y teclado).
 
 # --- Corporación RTVE ---
 #EXTINF:-1 tvg-id="la1" group-title="Nacional",La 1
@@ -94,4 +95,11 @@ https://www.telemadrid.es/emision-en-directo/
 https://www.telemadrid.es/emision-en-directo-laotra/
 #EXTINF:-1 tvg-id="apunt" group-title="Autonómico",À Punt
 https://www.apuntmedia.es/directe/directe-tv_136_1392524.html
-#EXTINF:-1 tvg-id
+#EXTINF:-1 tvg-id="tpa" group-title="Autonómico",TPA
+https://www.rtpa.es/tpa-television
+#EXTINF:-1 tvg-id="la7cyl" group-title="Autonómico",La 7 Castilla y León
+https://www.cyltvplay.es/player/d3badef6-d229-4a27-9609-03df3d17ca3/la7/la7
+#EXTINF:-1 tvg-id="canalextremadura" group-title="Autonómico",Canal Extremadura
+https://www.canalextremadura.app/videos/182630-television-en-directo
+#EXTINF:-1 tvg-id="aragontv" group-title="Autonómico" x-login="1",Aragón TV
+https://www.aragonplay.es/watch/live/69934178aea15ae34fa39ad0

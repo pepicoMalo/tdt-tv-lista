@@ -19,9 +19,21 @@ Comprobado en Chromium de escritorio, desde España, una sola hora del día. **N
 | La 7 Castilla y León | Clappr | Autoplay. La 8 (provincias): solo León probada; Valladolid dio error de manifiesto. |
 | Canal Extremadura | Player propio en canalextremadura.app | Autoplay. |
 
-## Fuera de la v1
+## Añadidos a mano por el dueño de la lista (2026-11-17, sin verificar por Claude)
 
-- **Piden cuenta gratuita:** La 1, La 2, Teledeporte, Clan (`login_advice`), Aragón TV (aragonplay.es).
+Neox, Nova, Mega, Atreseries (Atresplayer: misma receta que Antena 3, aceptan cookies); Factoría de Ficción, Boing, Divinity,
+Energy, Be Mad (Mediaset Infinity: misma receta que Telecinco); DMAX, DKISS, TEN, Paramount Network, TRECE, Gol Play,
+Real Madrid TV, Squirrel, Veo 7 (webs propias, receta `default`, que rechaza cookies). Si alguno pide aceptar cookies o cuenta,
+se hace una vez con el modo cursor (OK en el mando) y queda guardado; si hace falta automatizarlo, receta por dominio en `recipes.json`.
+Orden y selección de la lista: son los del dueño, no se reordenan.
+
+## Con cuenta gratuita (`x-login`, app 0.2.0 o posterior)
+
+La 1, La 2, Teledeporte, Clan (RTVE, `login_advice`) y Aragón TV (aragonplay.es). Están en la lista; la primera vez hay que
+iniciar sesión con OK (modo cursor y teclado) y la sesión queda guardada. Sin probar en el Chromecast: no se sabe aún si el
+formulario de acceso funciona con el cursor, si el directo arranca solo tras iniciar sesión, ni cuánto dura la sesión.
+
+## Fuera de la lista
 - **Reproductor en iframe cruzado o sin autoplay:** TV Canaria (RTVC, iframe codev8 + Sourcepoint), IB3 (YouTube tras pulsar play), CMM TV (iframe Mangomolo), 7RM (los scripts del reproductor esperan un evento de ratón real).
 - **Más canales de Atresmedia y Mediaset** (Neox, Nova, Mega, Atreseries, FDF, Divinity, Energy, BeMad, Boing): mismas plataformas y misma receta; sin añadir ni probar todavía.
 - **Navarra TV:** mostraba pantalla de desconexión; reprobar a otra hora.

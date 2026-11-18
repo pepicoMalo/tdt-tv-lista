@@ -8,4 +8,7 @@ Lista de canales y recetas que consume la app **TDT TV** (Android TV).
 La app descarga ambos ficheros de `https://raw.githubusercontent.com/<usuario>/tdt-tv-lista/main/` al arrancar.
 Para cambiar la lista basta con hacer `git push`; no hay que recompilar el APK (GitHub tarda unos 5 minutos en refrescar la caché).
 
+Los canales con `x-login="1"` piden cuenta: la app 0.2.0 o posterior los muestra y se inicia sesión con el modo cursor
+(OK en el mando); la 0.1.0 los descarta.
+
 Formato completo: ver el README de la app `tdt-tv`.
