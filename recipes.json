@@ -17,6 +17,9 @@
     "apuntmedia.es": {
       "play": "button.vjs-big-play-button"
     },
+    "cope.es": {
+      "play": ".c-card--claim__toggle__btn.toggle-btn-video"
+    },
     "atresplayer.com": {
       "inheritJs": false,
       "js": "var a=document.querySelector('#didomi-notice-agree-button');if(a)a.click();",

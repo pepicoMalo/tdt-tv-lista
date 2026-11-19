@@ -27,6 +27,25 @@ Real Madrid TV, Squirrel, Veo 7 (webs propias, receta `default`, que rechaza coo
 se hace una vez con el modo cursor (OK en el mando) y queda guardado; si hace falta automatizarlo, receta por dominio en `recipes.json`.
 Orden y selección de la lista: son los del dueño, no se reordenan.
 
+### Revisión del 2026-11-19 de «Otros operadores nacionales»
+
+Tras las pruebas en el Chromecast (algunos de estos canales no se veían) se comprobaron las 9 URLs en Chromium de escritorio
+(no en el WebView) y sus códigos HTTP con curl. Ninguna de las 9 URLs originales daba el directo tal cual.
+
+| Canal | Resultado | Cambio |
+|---|---|---|
+| Paramount Network | `paramountnetwork.es` redirige a Pluto TV | URL → `https://pluto.tv/es/watch/live-tv/29330/` (canal FAST de Pluto; reproduce sin cuenta tras «Solo esenciales», con anuncios) |
+| TRECE | `trecetv.es` redirige a `cope.es/directos/trece`; el reproductor arranca en modo audio y el vídeo está oculto | URL → `https://www.cope.es/directos/trece` y receta `cope.es` que pulsa el botón «Video» (comprobado: el vídeo pasa a ocupar la pantalla). Los programas «POR TV» (p. ej. la teletienda) salen con la cartela «sin derechos de emisión a través de internet»: es de la propia emisión |
+| Real Madrid TV | con `es-es` en minúsculas la web da error; con `es-ES` carga, pero pide cuenta Madridista gratuita | URL → `https://www.realmadrid.com/es-ES/real-madrid-tv` y `x-login="1"` |
+| Gol Play | `golplay.com` no conecta (sin respuesta) | Sin cambio. Candidata: `https://replaytv.es/en-directo` (Replay, de Mediapro; reproductor Dailymotion que arranca solo), pero puede no ser el mismo canal |
+| DMAX | `max.com` redirige a `hbomax.com` (404, de pago); `dmax.es` solo tiene VOD | Sin cambio; sin directo web gratuito |
+| DKISS, TEN | 404; sus webs solo tienen guía de programación | Sin cambio; sin directo web |
+| Squirrel | redirección rota (`squirreltv.esdirecto`); sin directo en la web | Sin cambio; sin directo web |
+| Veo 7 | `veo7.es/directo` va a la home `veo7.com`; el vídeo que avanza es un promocional | Sin cambio; sin directo web |
+
+Los cinco sin directo web (DMAX, DKISS, TEN, Squirrel, Veo 7) y Gol Play siguen en la lista tal cual: si los quieres fuera de la
+rotación, márcalos con `x-disabled="1"`. Pluto y Real Madrid TV están sin probar en el Chromecast.
+
 ## Con cuenta gratuita (`x-login`, app 0.2.0 o posterior)
 
 La 1, La 2, Teledeporte, Clan (RTVE, `login_advice`) y Aragón TV (aragonplay.es). Están en la lista; la primera vez hay que

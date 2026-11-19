@@ -66,13 +66,13 @@ https://www.dkiss.es/en-directo
 #EXTINF:-1 tvg-id="ten" group-title="Nacional",TEN
 https://tentv.es/en-directo/
 #EXTINF:-1 tvg-id="paramount" group-title="Nacional",Paramount Network
-https://www.paramountnetwork.es/en-directo
+https://pluto.tv/es/watch/live-tv/29330/
 #EXTINF:-1 tvg-id="trece" group-title="Nacional",TRECE
-https://trecetv.es/directo
+https://www.cope.es/directos/trece
 #EXTINF:-1 tvg-id="golplay" group-title="Nacional",Gol Play
 https://golplay.com/en-directo
-#EXTINF:-1 tvg-id="realmadridtv" group-title="Nacional",Real Madrid TV
-https://www.realmadrid.com/es-es/rmplay/tv
+#EXTINF:-1 tvg-id="realmadridtv" group-title="Nacional" x-login="1",Real Madrid TV
+https://www.realmadrid.com/es-ES/real-madrid-tv
 #EXTINF:-1 tvg-id="squirrel" group-title="Nacional",Squirrel
 https://www.squirreltv.es/directo
 #EXTINF:-1 tvg-id="veo7" group-title="Nacional",Veo 7
