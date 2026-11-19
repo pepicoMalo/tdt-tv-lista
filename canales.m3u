@@ -2,6 +2,7 @@
 # Lista v1 (verificada el 2026-11-17 en navegador de escritorio, desde España). Orden = orden de zapping.
 # Atributos propios: x-subs="1" subtitulos, x-login="1" pide cuenta, x-disabled="1" desactivado, x-recipe="clave".
 # x-login: la app 0.2.0 o posterior lo muestra con el aviso «pide cuenta»; la 0.1.0 lo descarta. Iniciar sesion: OK en el mando (modo cursor y teclado).
+# Una URL que termina en .m3u8 es un flujo HLS directo: la app 0.3.0 o posterior lo reproduce sin pagina web (las anteriores no lo reproducen).
 
 # --- Corporación RTVE ---
 #EXTINF:-1 tvg-id="la1" group-title="Nacional",La 1
@@ -65,12 +66,10 @@ https://www.max.com/es/es/ondemand/dmax
 https://www.dkiss.es/en-directo
 #EXTINF:-1 tvg-id="ten" group-title="Nacional" x-disabled="1",TEN
 https://tentv.es/en-directo/
-#EXTINF:-1 tvg-id="paramount" group-title="Nacional",Paramount Network
-https://pluto.tv/es/watch/live-tv/29330/
 #EXTINF:-1 tvg-id="trece" group-title="Nacional",TRECE
 https://www.cope.es/directos/trece
-#EXTINF:-1 tvg-id="realmadridtv" group-title="Nacional" x-login="1",Real Madrid TV
-https://www.realmadrid.com/es-ES/real-madrid-tv
+#EXTINF:-1 tvg-id="realmadridtv" group-title="Nacional",Real Madrid TV
+https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8
 #EXTINF:-1 tvg-id="squirrel" group-title="Nacional" x-disabled="1",Squirrel
 https://www.squirreltv.es/directo
 #EXTINF:-1 tvg-id="veo7" group-title="Nacional" x-disabled="1",Veo 7

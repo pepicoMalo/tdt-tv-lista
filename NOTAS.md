@@ -34,9 +34,9 @@ Tras las pruebas en el Chromecast (algunos de estos canales no se veían) se com
 
 | Canal | Resultado | Cambio |
 |---|---|---|
-| Paramount Network | `paramountnetwork.es` redirige a Pluto TV | URL → `https://pluto.tv/es/watch/live-tv/29330/` (canal FAST de Pluto; reproduce sin cuenta tras «Solo esenciales», con anuncios) |
+| Paramount Network | `paramountnetwork.es` redirige a Pluto TV | Se puso la URL de Pluto (`https://pluto.tv/es/watch/live-tv/29330/`, canal FAST, con anuncios) y después **se eliminó de la lista** (decisión del dueño, 2026-11-19): el canal de TDT habría cedido su frecuencia a Squirrel 2 el 1-ene-2026 (según un resumen de búsqueda de Xataka/Espinof, sin confirmar) |
 | TRECE | `trecetv.es` redirige a `cope.es/directos/trece`; el reproductor arranca en modo audio y el vídeo está oculto | URL → `https://www.cope.es/directos/trece` y receta `cope.es` que pulsa el botón «Video» (comprobado: el vídeo pasa a ocupar la pantalla). Los programas «POR TV» (p. ej. la teletienda) salen con la cartela «sin derechos de emisión a través de internet»: es de la propia emisión |
-| Real Madrid TV | con `es-es` en minúsculas la web da error; con `es-ES` carga, pero pide cuenta Madridista gratuita | URL → `https://www.realmadrid.com/es-ES/real-madrid-tv` y `x-login="1"` |
+| Real Madrid TV | con `es-es` en minúsculas la web da error; con `es-ES` carga, pero pide cuenta Madridista gratuita | Primero URL `https://www.realmadrid.com/es-ES/real-madrid-tv` con `x-login="1"`; después pasó a **flujo HLS directo** sin cuenta (ver «Flujos HLS directos») |
 | Gol Play | `golplay.com` no conecta (sin respuesta); TDTChannels ya no lo lista | **Eliminado de la lista** (decisión del dueño). Si algún día se quiere algo parecido: Replay (`https://replaytv.es/en-directo`, de Mediapro; reproductor Dailymotion que arranca solo), que no es el mismo canal |
 | DMAX | `max.com` redirige a `hbomax.com` (404, de pago); `dmax.es` solo tiene VOD | `x-disabled="1"`: sin directo web gratuito |
 | DKISS, TEN | 404; sus webs solo tienen guía de programación | `x-disabled="1"`: sin directo web |
@@ -50,8 +50,17 @@ Pluto y Real Madrid TV están sin probar en el Chromecast. Para reactivar un can
 Su lista (`https://www.tdtchannels.com/lists/tv.json`) trae DMAX, DKISS, Ten, Veo7, Squirrel y Squirrel2 con 0 emisiones
 online, y ya no trae Gol Play. Que Telecinco, Cuatro, FDF, Energy, Divinity, Be Mad y Boing también salgan con 0 no significa que no
 haya directo: los ven en la web de Mediaset (con cookies aceptadas), solo que su lista no incluye ese tipo de emisión. TDTChannels
-solo da enlaces directos `.m3u8`/YouTube, que esta app no reproduce (abre webs). Tiene `.m3u8` directos de Real Madrid TV
-(`rmtv.akamaized.net`) y de TRECE (`play.cdn.enetres.net`), por si algún día la app admite flujos HLS.
+solo da enlaces directos `.m3u8`/YouTube; los `.m3u8` se reproducen desde la app 0.3.0 (ver más abajo), los de YouTube no.
+
+### Flujos HLS directos (app 0.3.0 o posterior)
+
+Una URL que termina en `.m3u8` se reproduce con el reproductor nativo de Android, sin página web, sin cuenta y sin cookies.
+
+| Canal | Estado |
+|---|---|
+| Real Madrid TV | **En la lista** (2026-11-19): `https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8`. Comprobado con curl: responde 200 sin cuenta ni token, igual con el User-Agent de Android y el de un navegador; lista maestra con 3 calidades (320x180 a 1280x720, H.264 + AAC), segmentos MPEG-TS de 6 s, sin `EXT-X-MAP`. Variante en inglés: `.../2043154/rmtv-en-web/master.m3u8`. Sin probar en el Chromecast |
+| La 1, La 2, 24 Horas, Clan, Teledeporte | Disponibles en TDTChannels, **no puestos en la lista**: `https://rtvelivestream.rtve.es/rtvesec/<canal>/<canal>_main_dvr.m3u8` (`la1`, `la2`, `24h`, `clan`; Teledeporte: `tdp/tdp_main.m3u8`). Evitarían la cuenta de RTVE Play; sin comprobar su respuesta |
+| TRECE | Disponible: `https://play.cdn.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/021/playlist.m3u8`. Sin comprobar. Se queda con la web de COPE y su receta |
 
 ### Squirrel y Squirrel 2
 
