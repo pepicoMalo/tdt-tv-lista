@@ -1,35 +1,55 @@
-#EXTM3U
+#EXTM3U url-tvg="https://www.tdtchannels.com/epg/TV.xml.gz"
 # Lista v1 (verificada el 2026-11-17 en navegador de escritorio, desde España). Orden = orden de zapping.
-# Atributos propios: x-subs="1" subtitulos, x-login="1" pide cuenta, x-disabled="1" desactivado, x-recipe="clave".
+# Atributos propios: x-subs="1" subtitulos, x-login="1" pide cuenta, x-disabled="1" desactivado, x-recipe="clave", x-web="https://..." pagina de respaldo.
 # x-login: la app 0.2.0 o posterior lo muestra con el aviso «pide cuenta»; la 0.1.0 lo descarta. Iniciar sesion: OK en el mando (modo cursor y teclado).
 # Una URL que termina en .m3u8 es un flujo HLS directo: la app 0.3.0 o posterior lo reproduce sin pagina web (las anteriores no lo reproducen).
+# La app 0.4.0 o posterior vuelve a la pagina x-web de un canal si su flujo .m3u8 no arranca, y muestra el programa actual en la lista de canales.
+# tvg-id es el id del canal en la guia de programacion (url-tvg, XMLTV de TDTChannels); los canales sin id en la guia (Atresmedia) no muestran programa.
 
 # --- Corporación RTVE ---
-#EXTINF:-1 tvg-id="la1" group-title="Nacional",La 1
-https://www.rtve.es/play/videos/directo/canales-lineales/la-1/
-#EXTINF:-1 tvg-id="la2" group-title="Nacional",La 2
-https://www.rtve.es/play/videos/directo/canales-lineales/la-2/
-#EXTINF:-1 tvg-id="rtve-24h" group-title="Nacional",24 Horas
-https://www.rtve.es/play/videos/directo/canales-lineales/24h/
-#EXTINF:-1 tvg-id="clan" group-title="Nacional",Clan
-https://www.rtve.es/play/clan/directo/
-#EXTINF:-1 tvg-id="teledeporte" group-title="Nacional",Teledeporte
-https://www.rtve.es/play/videos/directo/tdp/
+# Flujos HLS directos de RTVE (sin cuenta); x-web es la pagina de RTVE Play, a la que se vuelve si el flujo no arranca.
+#EXTINF:-1 tvg-id="La1.TV" group-title="Nacional" x-web="https://www.rtve.es/play/videos/directo/canales-lineales/la-1/",La 1
+https://rtvelivestream.rtve.es/rtvesec/la1/la1_main_dvr.m3u8
+#EXTINF:-1 tvg-id="La2.TV" group-title="Nacional" x-web="https://www.rtve.es/play/videos/directo/canales-lineales/la-2/",La 2
+https://rtvelivestream.rtve.es/rtvesec/la2/la2_main_dvr.m3u8
+#EXTINF:-1 tvg-id="24Horas.TV" group-title="Nacional" x-web="https://www.rtve.es/play/videos/directo/canales-lineales/24h/",24 Horas
+https://rtvelivestream.rtve.es/rtvesec/24h/24h_main_dvr.m3u8
+#EXTINF:-1 tvg-id="Clan.TV" group-title="Nacional" x-web="https://www.rtve.es/play/clan/directo/",Clan
+https://rtvelivestream.rtve.es/rtvesec/clan/clan_main_dvr.m3u8
+#EXTINF:-1 tvg-id="TDP.TV" group-title="Nacional" x-web="https://www.rtve.es/play/videos/directo/tdp/",Teledeporte
+https://rtvelivestream.rtve.es/rtvesec/tdp/tdp_main.m3u8
 
 # --- Autonómicos de Cataluña ---
-#EXTINF:-1 tvg-id="tv3" group-title="Autonómico" x-subs="1",TV3
+# TV3 se queda con la web: el flujo directo no tiene la opcion de subtitulos.
+#EXTINF:-1 tvg-id="TV3.TV" group-title="Autonómico" x-subs="1",TV3
 https://www.3cat.cat/3cat/directes/tv3/
-#EXTINF:-1 tvg-id="3catinfo" group-title="Autonómico",3Cat Info (324)
-https://www.3cat.cat/3cat/directes/3catinfo-tv/
-#EXTINF:-1 tvg-id="sx3" group-title="Autonómico",SX3
-https://www.3cat.cat/3cat/directes/sx3/
-#EXTINF:-1 tvg-id="33" group-title="Autonómico",Canal 33
-https://www.3cat.cat/3cat/directes/33/
-#EXTINF:-1 tvg-id="esport3" group-title="Autonómico",Esport3
-https://www.3cat.cat/3cat/directes/esport3/
+#EXTINF:-1 tvg-id="324.TV" group-title="Autonómico" x-web="https://www.3cat.cat/3cat/directes/3catinfo-tv/",3Cat Info (324)
+https://directes-tv-es.3catdirectes.cat/live-content/canal324-hls/master.m3u8
+#EXTINF:-1 tvg-id="SX3.TV" group-title="Autonómico" x-web="https://www.3cat.cat/3cat/directes/sx3/",SX3
+https://directes-tv-es.3catdirectes.cat/live-content/super3-hls/master.m3u8
+#EXTINF:-1 tvg-id="C33.TV" group-title="Autonómico" x-web="https://www.3cat.cat/3cat/directes/33/",Canal 33
+https://directes-tv-es.3catdirectes.cat/live-content/c33-super3-hls/master.m3u8
+#EXTINF:-1 tvg-id="E3.TV" group-title="Autonómico" x-web="https://www.3cat.cat/3cat/directes/esport3/",Esport3
+https://directes-tv-es.3catdirectes.cat/live-origin/esport3-hls/master.m3u8
+
+# --- Mediaset España ---
+# Mediaset y Atresplayer solo dan el directo si se aceptan las cookies: su receta las acepta (decision del usuario, 2026-11-17).
+#EXTINF:-1 tvg-id="Telecinco.TV" group-title="Nacional",Telecinco
+https://www.mediasetinfinity.es/directo/telecinco/
+#EXTINF:-1 tvg-id="Cuatro.TV" group-title="Nacional",Cuatro
+https://www.mediasetinfinity.es/directo/cuatro/
+#EXTINF:-1 tvg-id="FDF.TV" group-title="Nacional",Factoría de Ficción
+https://www.mediasetinfinity.es/directo/fdf/
+#EXTINF:-1 tvg-id="Boing.TV" group-title="Nacional",Boing
+https://www.mediasetinfinity.es/directo/boing/
+#EXTINF:-1 tvg-id="Divinity.TV" group-title="Nacional",Divinity
+https://www.mediasetinfinity.es/directo/divinity/
+#EXTINF:-1 tvg-id="Energy.TV" group-title="Nacional",Energy
+https://www.mediasetinfinity.es/directo/energy/
+#EXTINF:-1 tvg-id="Bemad.TV" group-title="Nacional",Be Mad
+https://www.mediasetinfinity.es/directo/bemad/
 
 # --- Atresmedia ---
-# Atresplayer y Mediaset solo dan el directo si se aceptan las cookies: su receta las acepta (decision del usuario, 2026-11-17).
 #EXTINF:-1 tvg-id="antena3" group-title="Nacional",Antena 3
 https://www.atresplayer.com/directos/antena3/
 #EXTINF:-1 tvg-id="lasexta" group-title="Nacional",laSexta
@@ -43,60 +63,44 @@ https://www.atresplayer.com/directos/mega/
 #EXTINF:-1 tvg-id="atreseries" group-title="Nacional",Atreseries
 https://www.atresplayer.com/directos/atreseries/
 
-# --- Mediaset España ---
-#EXTINF:-1 tvg-id="telecinco" group-title="Nacional",Telecinco
-https://www.mediasetinfinity.es/directo/telecinco/
-#EXTINF:-1 tvg-id="cuatro" group-title="Nacional",Cuatro
-https://www.mediasetinfinity.es/directo/cuatro/
-#EXTINF:-1 tvg-id="fdf" group-title="Nacional",Factoría de Ficción
-https://www.mediasetinfinity.es/directo/fdf/
-#EXTINF:-1 tvg-id="boing" group-title="Nacional",Boing
-https://www.mediasetinfinity.es/directo/boing/
-#EXTINF:-1 tvg-id="divinity" group-title="Nacional",Divinity
-https://www.mediasetinfinity.es/directo/divinity/
-#EXTINF:-1 tvg-id="energy" group-title="Nacional",Energy
-https://www.mediasetinfinity.es/directo/energy/
-#EXTINF:-1 tvg-id="bemad" group-title="Nacional",Be Mad
-https://www.mediasetinfinity.es/directo/bemad/
-
 # --- Otros operadores nacionales ---
-#EXTINF:-1 tvg-id="dmax" group-title="Nacional" x-disabled="1",DMAX
+#EXTINF:-1 tvg-id="DMax.TV" group-title="Nacional" x-disabled="1",DMAX
 https://www.max.com/es/es/ondemand/dmax
-#EXTINF:-1 tvg-id="dkiss" group-title="Nacional" x-disabled="1",DKISS
+#EXTINF:-1 tvg-id="DKISS.TV" group-title="Nacional" x-disabled="1",DKISS
 https://www.dkiss.es/en-directo
-#EXTINF:-1 tvg-id="ten" group-title="Nacional" x-disabled="1",TEN
+#EXTINF:-1 tvg-id="TEN.TV" group-title="Nacional" x-disabled="1",TEN
 https://tentv.es/en-directo/
-#EXTINF:-1 tvg-id="trece" group-title="Nacional",TRECE
-https://www.cope.es/directos/trece
-#EXTINF:-1 tvg-id="realmadridtv" group-title="Nacional",Real Madrid TV
+#EXTINF:-1 tvg-id="13.TV" group-title="Nacional" x-web="https://www.cope.es/directos/trece",TRECE
+https://play.cdn.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/021/playlist.m3u8
+#EXTINF:-1 tvg-id="RMTV.TV" group-title="Nacional",Real Madrid TV
 https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8
-#EXTINF:-1 tvg-id="squirrel" group-title="Nacional" x-disabled="1",Squirrel
+#EXTINF:-1 tvg-id="Squirrel.TV" group-title="Nacional" x-disabled="1",Squirrel
 https://www.squirreltv.es/directo
-#EXTINF:-1 tvg-id="veo7" group-title="Nacional" x-disabled="1",Veo 7
+#EXTINF:-1 tvg-id="Veo7.TV" group-title="Nacional" x-disabled="1",Veo 7
 https://www.veo7.es/directo
 
 # --- Resto de canales autonómicos ---
-#EXTINF:-1 tvg-id="etb1" group-title="Autonómico",ETB1
-https://etbon.eus/ch/etb-1on
-#EXTINF:-1 tvg-id="etb2" group-title="Autonómico",ETB2
-https://etbon.eus/ch/etb-2on
-#EXTINF:-1 tvg-id="tvg" group-title="Autonómico",TVG
-https://www.agalega.gal/videos/76475-tvg
-#EXTINF:-1 tvg-id="tvg2" group-title="Autonómico",TVG2
-https://www.agalega.gal/videos/77550-tv-g2
-#EXTINF:-1 tvg-id="canalsur" group-title="Autonómico",Canal Sur
-https://www.canalsurmas.es/videos/131772-canal-sur-andalucia
-#EXTINF:-1 tvg-id="telemadrid" group-title="Autonómico",Telemadrid
+#EXTINF:-1 tvg-id="ETB1.TV" group-title="Autonómico" x-web="https://etbon.eus/ch/etb-1on",ETB1
+https://cdn1.etbon.eus/etb1/index.m3u8
+#EXTINF:-1 tvg-id="ETB2.TV" group-title="Autonómico" x-web="https://etbon.eus/ch/etb-2on",ETB2
+https://cdn1.etbon.eus/etb2/index.m3u8
+#EXTINF:-1 tvg-id="TVGAL.TV" group-title="Autonómico" x-web="https://www.agalega.gal/videos/76475-tvg",TVG
+https://crtvg-europa.flumotion.cloud/playlist_dvr.m3u8
+#EXTINF:-1 tvg-id="TVG2.TV" group-title="Autonómico" x-web="https://www.agalega.gal/videos/77550-tv-g2",TVG2
+https://crtvg-tvg2.flumotion.cloud/playlist_dvr.m3u8
+#EXTINF:-1 tvg-id="CanalSurA.TV" group-title="Autonómico" x-web="https://www.canalsurmas.es/videos/131772-canal-sur-andalucia",Canal Sur
+https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8
+#EXTINF:-1 tvg-id="Telemadrid.TV" group-title="Autonómico",Telemadrid
 https://www.telemadrid.es/emision-en-directo/
-#EXTINF:-1 tvg-id="laotra" group-title="Autonómico",La Otra
+#EXTINF:-1 tvg-id="LaOtra.TV" group-title="Autonómico",La Otra
 https://www.telemadrid.es/emision-en-directo-laotra/
-#EXTINF:-1 tvg-id="apunt" group-title="Autonómico",À Punt
+#EXTINF:-1 tvg-id="APUNT.TV" group-title="Autonómico",À Punt
 https://www.apuntmedia.es/directe/directe-tv_136_1392524.html
-#EXTINF:-1 tvg-id="tpa" group-title="Autonómico",TPA
+#EXTINF:-1 tvg-id="TPA.TV" group-title="Autonómico",TPA
 https://www.rtpa.es/tpa-television
-#EXTINF:-1 tvg-id="la7cyl" group-title="Autonómico",La 7 Castilla y León
+#EXTINF:-1 tvg-id="La7.TV" group-title="Autonómico",La 7 Castilla y León
 https://www.cyltvplay.es/player/d3badef6-d229-4a27-9609-03df3d17ca3/la7/la7
-#EXTINF:-1 tvg-id="canalextremadura" group-title="Autonómico",Canal Extremadura
-https://www.canalextremadura.app/videos/182630-television-en-directo
-#EXTINF:-1 tvg-id="aragontv" group-title="Autonómico" x-login="1",Aragón TV
+#EXTINF:-1 tvg-id="Extremadura.TV" group-title="Autonómico" x-web="https://www.canalextremadura.app/videos/182630-television-en-directo",Canal Extremadura
+https://d2ymuyhevki1a1.cloudfront.net/wct-ddd2992e-86fc-4611-a491-7f392259e9ba/continuous/9be76611-d2cd-474d-bf19-ef702ba31b02/index.m3u8
+#EXTINF:-1 tvg-id="AragonTV.TV" group-title="Autonómico" x-login="1",Aragón TV
 https://www.aragonplay.es/watch/live/69934178aea15ae34fa39ad0

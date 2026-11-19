@@ -59,8 +59,20 @@ Una URL que termina en `.m3u8` se reproduce con el reproductor nativo de Android
 | Canal | Estado |
 |---|---|
 | Real Madrid TV | **En la lista** (2026-11-19): `https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8`. Comprobado con curl: responde 200 sin cuenta ni token, igual con el User-Agent de Android y el de un navegador; lista maestra con 3 calidades (320x180 a 1280x720, H.264 + AAC), segmentos MPEG-TS de 6 s, sin `EXT-X-MAP`. Variante en inglés: `.../2043154/rmtv-en-web/master.m3u8`. Sin probar en el Chromecast |
-| La 1, La 2, 24 Horas, Clan, Teledeporte | Disponibles en TDTChannels, **no puestos en la lista**: `https://rtvelivestream.rtve.es/rtvesec/<canal>/<canal>_main_dvr.m3u8` (`la1`, `la2`, `24h`, `clan`; Teledeporte: `tdp/tdp_main.m3u8`). Evitarían la cuenta de RTVE Play; sin comprobar su respuesta |
-| TRECE | Disponible: `https://play.cdn.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/021/playlist.m3u8`. Sin comprobar. Se queda con la web de COPE y su receta |
+| La 1, La 2, 24 Horas, Clan, Teledeporte | **En la lista** (2026-11-19): `https://rtvelivestream.rtve.es/rtvesec/<canal>/<canal>_main_dvr.m3u8` (`la1`, `la2`, `24h`, `clan`; Teledeporte: `tdp/tdp_main.m3u8`). Sin cuenta ni token, listas maestras de 3-4 calidades (hasta 720p), segmentos TS. La web de RTVE Play queda como `x-web` de respaldo |
+| TRECE | **En la lista**: `https://play.cdn.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/021/playlist.m3u8` (1080p, TS); respaldo `x-web` = la web de COPE con su receta. Los programas «POR TV» salen con la cartela de sin derechos de emisión |
+| 3Cat Info, SX3, Canal 33, Esport3 | **En la lista**: `directes-tv-es.3catdirectes.cat/live-content/<canal>-hls/master.m3u8` (`canal324`, `super3`, `c33-super3`; Esport3 solo tiene `live-origin/esport3-hls`). TS, hasta 1080p, sin anuncios previos. **TV3 se queda con la web** (tiene `x-subs`: el flujo directo no ofrece subtítulos); su flujo TS existe (`directes3-tv-cat.3catdirectes.cat/live-content/tv3-hls/master.m3u8`) |
+| ETB1, ETB2, TVG, TVG2, Canal Sur, Canal Extremadura | **En la lista**: `cdn1.etbon.eus/etb{1,2}/index.m3u8`, `crtvg-europa.flumotion.cloud/playlist_dvr.m3u8` (TVG), `crtvg-tvg2.flumotion.cloud/playlist_dvr.m3u8`, cloudfront de Canal Sur (`CanalSurAndaluciaES.m3u8`) y de Canal Extremadura. Todos TS, 200 sin token (comprobado con curl el 2026-11-19) |
+| À Punt | **Se queda con la web**: su flujo (`fastly.live.brightcove.com/.../playlist-hls-dvr.m3u8`) usa fMP4/CMAF (`EXT-X-MAP`, segmentos `.mp4`), que el reproductor nativo de Android reproduce mal, y lleva un JWT en la ruta |
+| Telemadrid, La Otra, TPA, La 7 CyL, Aragón TV, Atresmedia, Mediaset | Sin flujo en TDTChannels: se quedan con la web |
+
+### Guía de programación (app 0.4.0 o posterior)
+
+La cabecera de la lista lleva `url-tvg="https://www.tdtchannels.com/epg/TV.xml.gz"` (XMLTV, ~0,6 MB comprimido, 188 canales,
+unos 2,5 días; TDTChannels la regenera cada día sobre las 07:00 UTC). El `tvg-id` de cada canal es su id en esa guía
+(`La1.TV`, `TDP.TV`, `324.TV`, `13.TV`, `RMTV.TV`, `Bemad.TV`…). Cubre 31 de los 37 canales activos; **no tiene Atresmedia**
+(Antena 3, laSexta, Neox, Nova, Mega, Atreseries), que salen sin programa. Comprobado el 2026-11-19 con el analizador real:
+400 ms para leer el XML y 97 KB de caché en disco.
 
 ### Squirrel y Squirrel 2
 
@@ -71,7 +83,9 @@ opcional, sin canales en directo en su portada. En TDTChannels, ambos con 0 emis
 
 ## Con cuenta gratuita (`x-login`, app 0.2.0 o posterior)
 
-La 1, La 2, Teledeporte, Clan (RTVE, `login_advice`) y Aragón TV (aragonplay.es). Están en la lista; la primera vez hay que
+**Desde la 0.4.0 los canales de RTVE (La 1, La 2, 24 Horas, Clan, Teledeporte) van por flujo HLS directo y no necesitan cuenta**;
+solo piden cuenta si cae a la web (`x-web`). Aragón TV sigue siendo el único con cuenta de verdad. Los tres textos siguientes
+describen la web: La 1, La 2, Teledeporte, Clan (RTVE, `login_advice`) y Aragón TV (aragonplay.es). Están en la lista; la primera vez hay que
 iniciar sesión con OK (modo cursor y teclado) y la sesión queda guardada. Sin probar en el Chromecast: no se sabe aún si el
 formulario de acceso funciona con el cursor, si el directo arranca solo tras iniciar sesión, ni cuánto dura la sesión.
 
