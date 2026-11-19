@@ -74,6 +74,17 @@ unos 2,5 días; TDTChannels la regenera cada día sobre las 07:00 UTC). El `tvg-
 (Antena 3, laSexta, Neox, Nova, Mega, Atreseries), que salen sin programa. Comprobado el 2026-11-19 con el analizador real:
 400 ms para leer el XML y 97 KB de caché en disco.
 
+### La Séptima (2026-11-19)
+
+Canal generalista nacional que empezó a emitir el 5-nov-2026. En TDTChannels: web `https://laseptima.com/la-septima-tv-directo/`, id de guía
+`LaSeptima.TV` (25 programas) y un solo flujo, de YouTube (`https://www.youtube.com/channel/UCOCGPFW1UqPP9zdol7vEK1A/live`), que esta app no
+reproduce como flujo. Su web oficial embebe ese YouTube en un iframe de otro origen (el script no lo puede controlar), y el embed suelto
+(`youtube.com/embed/live_stream?channel=…`) da **error 153** (YouTube pide `Referer`). Lo que funciona en Chromium de escritorio es la página
+`/channel/<id>/live` de YouTube: la primera vez pasa por `consent.youtube.com` («Rechazar todo») y luego muestra el directo en un `<video>` normal.
+Por eso la lista usa esa URL y `recipes.json` tiene una receta `youtube.com` que oculta la interfaz de YouTube (cabecera, controles, comentarios…)
+para que solo se vea el vídeo, y que pulsa «Rechazar todo» en el aviso de cookies de YouTube. Comprobado en navegador de escritorio (vídeo a pantalla
+completa, sin controles, con sonido); sin probar en el WebView del Chromecast. Si el aviso de YouTube no se rechaza solo, se hace una vez con el modo cursor.
+
 ### Squirrel y Squirrel 2
 
 Son dos canales de TDT de Squirrel Media: Squirrel (cine; `squirreltv.es`) y Squirrel 2 o «Squirreldos» (ficción; `squirrel2.tv`).

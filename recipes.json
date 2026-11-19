@@ -20,6 +20,10 @@
     "cope.es": {
       "play": ".c-card--claim__toggle__btn.toggle-btn-video"
     },
+    "youtube.com": {
+      "css": "ytd-masthead,#masthead-container,ytd-miniplayer,ytd-live-chat-frame,#chat,tp-yt-app-drawer,ytd-mini-guide-renderer,#secondary,#below,.ytp-chrome-top,.ytp-chrome-bottom,.ytp-gradient-top,.ytp-gradient-bottom,.ytp-pause-overlay,.ytp-ce-element,.ytp-cards-button,.ytp-cards-teaser,.ytp-watermark,.ytp-paid-content-overlay,.ytp-popup,.ytp-endscreen-content,.ytp-iv-video-content,.ytp-spinner,.ytp-player-content,.ytp-ad-module,.ytp-ad-overlay-container{display:none!important}",
+      "js": "if(location.hostname==='consent.youtube.com'){var bs=document.querySelectorAll('button');for(var i=0;i<bs.length;i++){if(/rechazar todo|reject all/i.test(bs[i].textContent)){bs[i].click();break;}}}"
+    },
     "atresplayer.com": {
       "inheritJs": false,
       "js": "var a=document.querySelector('#didomi-notice-agree-button');if(a)a.click();",

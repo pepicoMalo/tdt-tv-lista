@@ -72,6 +72,9 @@ https://www.dkiss.es/en-directo
 https://tentv.es/en-directo/
 #EXTINF:-1 tvg-id="13.TV" group-title="Nacional" x-web="https://www.cope.es/directos/trece",TRECE
 https://play.cdn.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/021/playlist.m3u8
+# La Séptima (emite desde el 5-nov-2026): su directo es un YouTube en vivo; la receta youtube.com deja solo el video y rechaza el aviso de cookies de YouTube.
+#EXTINF:-1 tvg-id="LaSeptima.TV" group-title="Nacional",La Séptima
+https://www.youtube.com/channel/UCOCGPFW1UqPP9zdol7vEK1A/live
 #EXTINF:-1 tvg-id="RMTV.TV" group-title="Nacional",Real Madrid TV
 https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8
 #EXTINF:-1 tvg-id="Squirrel.TV" group-title="Nacional" x-disabled="1",Squirrel
