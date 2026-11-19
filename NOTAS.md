@@ -37,14 +37,28 @@ Tras las pruebas en el Chromecast (algunos de estos canales no se veían) se com
 | Paramount Network | `paramountnetwork.es` redirige a Pluto TV | URL → `https://pluto.tv/es/watch/live-tv/29330/` (canal FAST de Pluto; reproduce sin cuenta tras «Solo esenciales», con anuncios) |
 | TRECE | `trecetv.es` redirige a `cope.es/directos/trece`; el reproductor arranca en modo audio y el vídeo está oculto | URL → `https://www.cope.es/directos/trece` y receta `cope.es` que pulsa el botón «Video» (comprobado: el vídeo pasa a ocupar la pantalla). Los programas «POR TV» (p. ej. la teletienda) salen con la cartela «sin derechos de emisión a través de internet»: es de la propia emisión |
 | Real Madrid TV | con `es-es` en minúsculas la web da error; con `es-ES` carga, pero pide cuenta Madridista gratuita | URL → `https://www.realmadrid.com/es-ES/real-madrid-tv` y `x-login="1"` |
-| Gol Play | `golplay.com` no conecta (sin respuesta) | Sin cambio. Candidata: `https://replaytv.es/en-directo` (Replay, de Mediapro; reproductor Dailymotion que arranca solo), pero puede no ser el mismo canal |
-| DMAX | `max.com` redirige a `hbomax.com` (404, de pago); `dmax.es` solo tiene VOD | Sin cambio; sin directo web gratuito |
-| DKISS, TEN | 404; sus webs solo tienen guía de programación | Sin cambio; sin directo web |
-| Squirrel | redirección rota (`squirreltv.esdirecto`); sin directo en la web | Sin cambio; sin directo web |
-| Veo 7 | `veo7.es/directo` va a la home `veo7.com`; el vídeo que avanza es un promocional | Sin cambio; sin directo web |
+| Gol Play | `golplay.com` no conecta (sin respuesta); TDTChannels ya no lo lista | **Eliminado de la lista** (decisión del dueño). Si algún día se quiere algo parecido: Replay (`https://replaytv.es/en-directo`, de Mediapro; reproductor Dailymotion que arranca solo), que no es el mismo canal |
+| DMAX | `max.com` redirige a `hbomax.com` (404, de pago); `dmax.es` solo tiene VOD | `x-disabled="1"`: sin directo web gratuito |
+| DKISS, TEN | 404; sus webs solo tienen guía de programación | `x-disabled="1"`: sin directo web |
+| Squirrel | redirección rota (`squirreltv.esdirecto`); su web no tiene directo (ver abajo) | `x-disabled="1"`: sin directo web |
+| Veo 7 | `veo7.es/directo` va a la home `veo7.com`; el vídeo que avanza es un promocional | `x-disabled="1"`: sin directo web |
 
-Los cinco sin directo web (DMAX, DKISS, TEN, Squirrel, Veo 7) y Gol Play siguen en la lista tal cual: si los quieres fuera de la
-rotación, márcalos con `x-disabled="1"`. Pluto y Real Madrid TV están sin probar en el Chromecast.
+Pluto y Real Madrid TV están sin probar en el Chromecast. Para reactivar un canal desactivado, borra su `x-disabled="1"`.
+
+### TDTChannels (https://www.tdtchannels.com/listas/), 2026-11-19
+
+Su lista (`https://www.tdtchannels.com/lists/tv.json`) trae DMAX, DKISS, Ten, Veo7, Squirrel y Squirrel2 con 0 emisiones
+online, y ya no trae Gol Play. Que Telecinco, Cuatro, FDF, Energy, Divinity, Be Mad y Boing también salgan con 0 no significa que no
+haya directo: los ven en la web de Mediaset (con cookies aceptadas), solo que su lista no incluye ese tipo de emisión. TDTChannels
+solo da enlaces directos `.m3u8`/YouTube, que esta app no reproduce (abre webs). Tiene `.m3u8` directos de Real Madrid TV
+(`rmtv.akamaized.net`) y de TRECE (`play.cdn.enetres.net`), por si algún día la app admite flujos HLS.
+
+### Squirrel y Squirrel 2
+
+Son dos canales de TDT de Squirrel Media: Squirrel (cine; `squirreltv.es`) y Squirrel 2 o «Squirreldos» (ficción; `squirrel2.tv`).
+Los dos tienen una página `live.php`, pero el enlace «EN DIRECTO» del menú está comentado en el HTML y la página no lleva
+reproductor: no hay directo web. Squirrel+ (`squirrelplus.com`) es una plataforma gratuita de cine y series bajo demanda con registro
+opcional, sin canales en directo en su portada. En TDTChannels, ambos con 0 emisiones. Se ven por TDT y por operadores.
 
 ## Con cuenta gratuita (`x-login`, app 0.2.0 o posterior)
 
